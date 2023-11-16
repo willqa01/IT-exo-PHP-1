@@ -1,5 +1,8 @@
 <?php
 
+$_POST[""];
+$_GET[""];
+
 $num1 = 0;
 $num2 = 10;
 
@@ -8,11 +11,14 @@ $result = 0;
 
 $testnum = "10";
 
+
 if ($num2 === $testnum) {
     $result = "OK";
 }
 
-if ($operation == "+") {
+$testBool = (($operation == "+" && $num1 > 10) || ($num2 > 5 && $num2 < 20));
+
+if (($operation == "+" && $num1 > 10) || $num2 < 20) {
     $result = $num1 + $num2;
 }
 if ($operation == "-") {
