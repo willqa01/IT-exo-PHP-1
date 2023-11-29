@@ -45,8 +45,8 @@
                 <form class="card p-2">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Promo code">
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-secondary" id = "promo" style="height: 100%;">Redeem</button>
+                        <div class="input-group-append" id="promocode">
+                            <button type="submit" class="btn btn-secondary" id="promo" style="height: 100%;" onclick="loading();">Redeem</button>
                         </div>
                     </div>
                 </form>
@@ -271,10 +271,10 @@
         function showErrorModal() {
             $('#errorModal').modal('show');
         }
-        document.querySelector('.card.p-2').addEventListener('submit', function(event) {//driver.execute_script("document.getElementById('details).value = 'test'")
-            event.preventDefault(); // Empêche la soumission standard du formulaire
-            showErrorModal(); // Affiche la modale d'erreur
-        });
+        // document.querySelector('.card.p-2').addEventListener('submit', function(event) { //driver.execute_script("document.getElementById('details).value = 'test'")
+        //     event.preventDefault(); // Empêche la soumission standard du formulaire
+        //     showErrorModal(); // Affiche la modale d'erreur
+        // });
 
 
         // Fonction pour mettre à jour le total du panier
@@ -435,6 +435,21 @@
 
 
         // Ajout de l'écouteur d'événement de soumission au formulaire
+    </script>
+
+    <script>
+        function loading() {
+            //console.log("test");
+            var tempo = document.getElementById("promocode").innerHTML
+            document.getElementById("promocode").innerHTML = "<div class='loader'></div>"
+            //document.getElementById('promocode').innerHTML = ""
+            setTimeout(() => {
+                document.getElementById('promocode').innerHTML = tempo ;
+                //document.getElementById("promocode").style.display = 'none';
+            }, 2000);
+
+            
+        }
     </script>
 
 
